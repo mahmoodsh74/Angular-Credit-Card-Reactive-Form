@@ -1,0 +1,9 @@
+<form [formGroup]="cardForm">
+<app-input [control]="$any(cardForm).get('name')"></app-input>
+
+</form>
+form content : {{cardForm.value | json}}
+<br>
+form is valid : {{cardForm.valid | json}}
+<br>
+form error : {{cardForm.get('name')?.errors | json}}

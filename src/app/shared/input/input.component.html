@@ -1,0 +1,10 @@
+<input [type]="type" [formControl]="control" [placeholder]="placeholder">
+<ng-container *ngIf="control?.touched && control?.dirty">
+  <div style="color: red;" *ngIf="control?.errors?.required">value is required</div>
+  <div style="color: red;" *ngIf="control?.errors?.minlength">
+    value from :
+    {{control?.errors?.minlength?.actualLength}}
+    to :
+    {{control?.errors?.minlength?.requiredLength}}
+  </div>
+</ng-container>
